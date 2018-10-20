@@ -1,4 +1,5 @@
 package co.polymorphic.co;
+
 interface Inf1{
     int i = 10;
     void show();
@@ -7,7 +8,10 @@ interface Inf1{
 interface Inf2{
     void fun();
 }
-class CA implements Inf1,Inf2{
+interface Inf3 extends Inf1,Inf2{
+
+}
+class CA implements Inf3{
     public void show(){
         System.out.println("Display Interface 1");
     }
@@ -18,8 +22,12 @@ class CA implements Inf1,Inf2{
 
 public class polyInterfaess {
     public static void main(String[] args){
-        Inf2 i1 = new CA();
 
-        ((CA) i1).fun();
+        Inf3 i3 = new CA();
+        i3.fun();
+        i3.show();
+        System.out.println("The Value of I is:" +i3.i);
+
+
     }
 }
